@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌙 Ramadan CLI 🌙
+#  Ramadan CLI 🌙
 
 ### *Your Terminal Companion for Ramadan Prayer Times*
 
