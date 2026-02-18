@@ -9,9 +9,6 @@ console.log('Running config module tests...\n');
 const TEST_CONFIG_DIR = path.join(os.tmpdir(), '.ramadan-cli-test-' + Date.now());
 const TEST_CONFIG_FILE = path.join(TEST_CONFIG_DIR, 'config.json');
 
-// Mock the config file path for testing
-const originalConfigDir = path.join(os.homedir(), '.ramadan-cli');
-
 // Test 1: Save and load config
 console.log('Test 1: Save and load configuration');
 const testConfig = {
