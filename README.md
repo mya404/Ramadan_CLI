@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)](https://nodejs.org/)
-[![npm](https://img.shields.io/badge/npm-v1.0.0-blue.svg)](https://www.npmjs.com/)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/mya404/Ramadan_CLI)
 
 *A beautiful, fast, and easy-to-use command-line interface (CLI) tool to display Sehar (pre-dawn meal) and Iftar (breaking fast) timings for Ramadan in your terminal.*
 
@@ -50,7 +50,9 @@ npm install
 npm install -g .
 ```
 
-### Method 2: Direct NPM Install (Coming Soon)
+### Method 2: NPM Install (Coming Soon)
+
+Once published to npm, you'll be able to install it directly:
 
 ```bash
 # This will be available once published to npm
@@ -115,8 +117,8 @@ ramadan today --all
 ramadan location <latitude> <longitude>
 
 # Examples:
-ramadan location 40.7128 -74.0060  # New York City
-ramadan location 51.5074 -0.1278   # London, UK
+ramadan location 40.7128 -74.0060  # New York
+ramadan location 51.5074 -0.1278   # London
 ```
 
 ### Configure default location
@@ -167,7 +169,7 @@ This tool uses the **[Adhan](https://github.com/batoulapps/adhan-js)** library w
 | Prayer | Arabic Name | Description |
 |--------|-------------|-------------|
 | **Sehar** | Fajr | Pre-dawn prayer - the last time to eat before fasting (Suhoor) |
-| **Sunrise** | Shurooq | When the sun rises - marks the beginning of fasting |
+| **Sunrise** | Shuruq | When the sun rises - marks the beginning of fasting |
 | **Iftar** | Maghrib | Sunset prayer - the time to break the fast |
 | **All Prayers** | - | Includes Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha |
 
