@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node bin/ramadan.js",
-    "test": "node test/prayer-times.test.js"
+    "test": "node test/prayer-times.test.js && node test/cities.test.js && node test/config.test.js"
   },
   "keywords": [
     "ramadan",
