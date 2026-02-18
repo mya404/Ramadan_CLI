@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node bin/ramadan.js",
-    "test": "echo \"No tests specified yet\""
+    "test": "node test/prayer-times.test.js"
   },
   "keywords": [
     "ramadan",
