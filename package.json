@@ -1,24 +1,40 @@
 {
   "name": "ramadan-cli",
   "version": "1.0.0",
-  "description": "A CLI tool to display Sehar and Iftar timings for Ramadan",
+  "description": "A CLI tool to display Sehar and Iftar timings for Ramadan with support for 60+ cities worldwide",
   "main": "index.js",
   "bin": {
     "ramadan": "./bin/ramadan.js"
   },
   "scripts": {
     "start": "node bin/ramadan.js",
-    "test": "node test/prayer-times.test.js"
+    "test": "node test/prayer-times.test.js && node test/cities.test.js && node test/config.test.js"
   },
   "keywords": [
     "ramadan",
     "prayer-times",
     "sehar",
     "iftar",
-    "cli"
+    "cli",
+    "islam",
+    "muslim",
+    "fajr",
+    "maghrib",
+    "salah",
+    "namaz",
+    "prayer",
+    "adhan"
   ],
-  "author": "",
+  "author": "mya404",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mya404/Ramadan_CLI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mya404/Ramadan_CLI/issues"
+  },
+  "homepage": "https://github.com/mya404/Ramadan_CLI#readme",
   "dependencies": {
     "commander": "^11.1.0",
     "adhan": "^4.4.3",
