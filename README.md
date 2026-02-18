@@ -5,7 +5,7 @@ A command-line interface (CLI) tool to display Sehar (pre-dawn meal) and Iftar (
 ## Features
 
 - 🕌 Display today's Sehar (Fajr) and Iftar (Maghrib) prayer times
-- 🌍 Get prayer times by city name (70+ cities worldwide)
+- 🌍 Get prayer times by city name (60+ cities worldwide)
 - 📍 Get prayer times for any location using latitude and longitude
 - ⚙️ Save your default location for quick access
 - 🕐 Display all daily prayer times (Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha)
@@ -61,7 +61,7 @@ ramadan city "Dubai"
 ramadan city "Istanbul"
 ```
 
-**Supported cities include:** New York, London, Paris, Berlin, Dubai, Riyadh, Mecca, Medina, Cairo, Istanbul, Karachi, Delhi, Jakarta, Toronto, Sydney, Tokyo, and many more!
+**Supported cities include:** New York, London, Paris, Berlin, Dubai, Riyadh, Mecca, Medina, Cairo, Istanbul, Karachi, Delhi, Jakarta, Toronto, Sydney, Tokyo, and 60+ more!
 
 ### Display all prayer times
 
@@ -110,7 +110,7 @@ ramadan today --all  # Show all prayer times
 ## Finding Your Location
 
 ### Option 1: Use City Name (Easiest)
-Simply use the city name if it's in our database of 70+ cities worldwide.
+Simply use the city name if it's in our database of 60+ cities worldwide.
 
 ### Option 2: Use Coordinates
 You can find your latitude and longitude coordinates using:
@@ -169,7 +169,7 @@ ramadan config --show
 
 ## Supported Cities
 
-The CLI includes 70+ major cities worldwide, including:
+The CLI includes 60+ major cities worldwide, including:
 
 **Middle East:** Mecca, Medina, Riyadh, Dubai, Doha, Kuwait, Cairo, Istanbul, Tehran, Baghdad, Beirut, Jerusalem
 
