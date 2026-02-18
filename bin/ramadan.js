@@ -3,9 +3,9 @@
 const { Command } = require('commander');
 const chalk = require('chalk');
 const Table = require('cli-table3');
-const { getRamadanTimes, getPrayerTimes, formatTime } = require('../lib/prayer-times');
+const { getRamadanTimes, getPrayerTimes, formatTime, getTimezoneName } = require('../lib/prayer-times');
 const { loadConfig, saveConfig } = require('../lib/config');
-const { getCityCoordinates } = require('../lib/cities');
+const { getCityCoordinates, getAvailableCities } = require('../lib/cities');
 
 const program = new Command();
 
@@ -62,10 +62,12 @@ function displayPrayerTimes(latitude, longitude, options = {}) {
   console.log(chalk.gray(`\nDate: ${new Date().toDateString()}`));
   
   if (locationName) {
-    console.log(chalk.gray(`Location: ${locationName} (${latitude.toFixed(4)}°, ${longitude.toFixed(4)}°)\n`));
+    console.log(chalk.gray(`Location: ${locationName} (${latitude.toFixed(4)}°, ${longitude.toFixed(4)}°)`));
   } else {
-    console.log(chalk.gray(`Location: ${latitude.toFixed(4)}°, ${longitude.toFixed(4)}°\n`));
+    console.log(chalk.gray(`Location: ${latitude.toFixed(4)}°, ${longitude.toFixed(4)}°`));
   }
+  
+  console.log(chalk.gray(`Timezone: ${getTimezoneName()}\n`));
 }
 
 program
@@ -223,6 +225,39 @@ program
       console.log(chalk.yellow('  ramadan config --latitude 40.7128 --longitude -74.0060\n'));
       process.exit(1);
     }
+  });
+
+program
+  .command('list-cities')
+  .description('List all available cities')
+  .action(() => {
+    const cities = getAvailableCities();
+    console.log(chalk.green.bold('\n🌍 Available Cities\n'));
+    
+    // Group cities by region
+    const regions = {
+      'Middle East': ['Mecca', 'Medina', 'Riyadh', 'Jeddah', 'Dubai', 'Abu Dhabi', 'Doha', 'Kuwait City', 'Muscat', 'Cairo', 'Damascus', 'Amman', 'Baghdad', 'Tehran', 'Istanbul', 'Ankara', 'Beirut', 'Jerusalem'],
+      'South Asia': ['Karachi', 'Lahore', 'Islamabad', 'Delhi', 'Mumbai', 'Dhaka', 'Colombo'],
+      'Southeast Asia': ['Jakarta', 'Kuala Lumpur', 'Singapore', 'Bangkok', 'Manila'],
+      'North Africa': ['Casablanca', 'Algiers', 'Tunis', 'Tripoli', 'Khartoum'],
+      'Europe': ['London', 'Paris', 'Berlin', 'Amsterdam', 'Brussels', 'Madrid', 'Rome', 'Vienna', 'Moscow'],
+      'North America': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Toronto', 'Montreal', 'Vancouver'],
+      'Australia': ['Sydney', 'Melbourne', 'Brisbane', 'Perth'],
+      'East Asia': ['Beijing', 'Shanghai', 'Tokyo', 'Seoul'],
+      'Africa': ['Nairobi', 'Lagos', 'Johannesburg', 'Cape Town']
+    };
+    
+    Object.entries(regions).forEach(([region, regionCities]) => {
+      const availableInRegion = regionCities.filter(city => cities.includes(city));
+      if (availableInRegion.length > 0) {
+        console.log(chalk.cyan.bold(region + ':'));
+        console.log(chalk.white('  ' + availableInRegion.join(', ')));
+        console.log('');
+      }
+    });
+    
+    console.log(chalk.gray(`Total: ${cities.length} cities available\n`));
+    console.log(chalk.blue('Usage: ramadan city "<city name>"\n'));
   });
 
 // Default action - show today's times for default location

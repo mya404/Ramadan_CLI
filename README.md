@@ -137,6 +137,7 @@ This tool uses the `adhan` library which implements well-established prayer time
 | `ramadan config --city <name>` | Set default location by city |
 | `ramadan config --show` | Show current configuration |
 | `ramadan config --reset` | Reset to default configuration |
+| `ramadan list-cities` | List all available cities |
 | `--all` or `-a` | Show all prayer times (not just Sehar/Iftar) |
 | `--help` | Display help information |
 
@@ -158,6 +159,9 @@ ramadan city "Dubai" --all
 
 # Use coordinates for unlisted cities
 ramadan location 25.2048 55.2708
+
+# See all available cities
+ramadan list-cities
 
 # Check your current settings
 ramadan config --show
